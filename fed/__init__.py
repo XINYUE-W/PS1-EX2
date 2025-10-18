@@ -1,0 +1,1 @@
+#This package contains modules for loading, cleaning, and visualising GDP data (2000–2022) for selected countries.

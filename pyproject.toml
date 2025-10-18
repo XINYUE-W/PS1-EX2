@@ -1,0 +1,6 @@
+This is the Exercise 2
+name = "fed"
+version = "0.1.0"
+description = "GDP data loading, cleaning, and visualisation project"
+authors = [{ name = "Xinyue Wang" }]
+dependencies = ["pandas", "matplotlib", "requests"]
