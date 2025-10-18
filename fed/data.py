@@ -26,5 +26,5 @@ def load_gdp_data(start_year=2000, end_year=2022):
 
 def save_clean_data(df, filename="gdp_clean.csv"):
     df.to_csv(filename, index=False)
-    print(f"✅ Clean data saved to {filename}")
+    print(f" Clean data saved to {filename}")
 
