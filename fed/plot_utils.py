@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def plot_gdp_trend(csv_path="gdp_clean.csv")
     
     df = pd.read_csv(csv_path)
-    print("📊 Loaded columns:", df.columns.tolist())
+    print(" Loaded columns:", df.columns.tolist())
     
     if "gdp_trillion_usd" in df.columns:
         gdp_col = "gdp_trillion_usd"
@@ -12,7 +12,7 @@ def plot_gdp_trend(csv_path="gdp_clean.csv")
         gdp_col = "gdp_usd"
         df[gdp_col] = df[gdp_col] / 1e12  # 转换为 trillion
     else:
-        raise KeyError("❌")
+        raise KeyError(" No related data")
 
     plt.figure(figsize=(10, 6))
     
