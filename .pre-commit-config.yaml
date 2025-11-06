@@ -1,0 +1,31 @@
+# See https://pre-commit.com for more information
+exclude: ^(\.venv|venv|ENV)/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=2000"]  # 如无需放宽可删掉这行
+        # exclude: "^notebooks/|\\.ipynb$"  # 如需要排除 .ipynb，去掉前面的 # 生效
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        args: ["--max-line-length=100"]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.1
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - pandas-stubs
+          - polars
+          - matplotlib
+          - types-seaborn
+          - types-requests
+        args: ["--ignore-missing-imports", "--strict"]
